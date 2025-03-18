@@ -5,13 +5,13 @@ related to issues, projects, users, and changelogs. The service supports paginat
 
 ## Installation
 
-To use this service in your project, clone the repository or install the package via NuGet.
+To use this service in your project, clone the repository.
 
 ### Clone Repository
 
 ```bash
-git clone https://your-repository-url.git
-cd your-project-folder
+git clone https://github.com/kevin-briand/JiraApiService.git
+cd JiraApiService
 ```
 
 ## Usage
@@ -21,29 +21,33 @@ cd your-project-folder
 To use the JiraApiService, you will need to create an instance and provide your Jira instance URL, username, and
 password/token.
 
-``` csharp
+```csharp
 // Initialize the JiraApiService
 var jiraApiService = new JiraApiService("https://your-jira-instance.atlassian.net", "your-username", "your-token");
 ```
 
 Alternatively, you can register it as a service for dependency injection:
-``` csharp
+
+```csharp
 // Initialize the JiraApiService
 builder.Services.AddScoped<IJiraApiService, JiraApiService>();
 ```
+
 and add the following settings un appsetting.json
-``` json
+
+```json
 {
-    "JiraApi": {
-        "BaseUrl": "https://yourInstance.atlassian.net",
-        "Username": "yourEmail",
-        "Password": "password/token"
+  "JiraApi": {
+    "BaseUrl": "https://yourInstance.atlassian.net",
+    "Username": "yourEmail",
+    "Password": "password/token"
   }
 }
 ```
 
 After that, you can use the methods provided.
-``` csharp
+
+```csharp
 // Example: Fetch updated issues
 var current = 0;
 await foreach (var updatedIssue in jiraApiService.GetUpdatedIssues(DateTime.Now.AddDays(-7)))
@@ -65,7 +69,7 @@ Setting up Serilog
 
 Here an example of configuration of logs :
 
-``` csharp
+```csharp
 // Set up Serilog
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug() // Sets the minimum log level to capture

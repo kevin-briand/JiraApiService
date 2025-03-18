@@ -1,20 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageId>JiraNet</PackageId>
-        <Title>JiraNet</Title>
-        <Authors>Kévin BRIAND</Authors>
         <Copyright>MIT</Copyright>
-        <Description>Test</Description>
-        <PackageProjectUrl>test</PackageProjectUrl>
-        <RepositoryUrl>test</RepositoryUrl>
-        <RepositoryType>Github</RepositoryType>
-        <RootNamespace>JiraApi</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
